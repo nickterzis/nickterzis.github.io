@@ -5,126 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsightTree</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="col s12 m10 l8 xl6 offset-l2 offset-m1 offset-xl3">
-                <div class="card">
+            <div class="col s12 xl8 offset-xl2">
+                <div class="card z-depth-5">
                     <div class="card-image">
                         <img src="imgs/profile.png" alt="profile picture">
-                        <span class="card-title">
-                            <h4>Christina Voskoglou</h4>
-                            <h6>Consultant in Scotland, UK</h6>
-                        </span>
+                        <span class="card-title">Christina Voskoglou</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <a class="waves-effect waves-light btn modal-trigger" href="#contactme-modal">Contact me</a>
+        <div id="social-buttons">
 
-            <!-- Modal Structure -->
-            <div id="contactme-modal" class="modal">
-                <div class="modal-content">
-                    <h4>Contact me</h4>
-                    <div class="row">
-                        <div class="input-field col s12 m6">
-                            <input id="first-name" type="text" class="validate" required>
-                            <label for="first-name">First name</label>
-                            <span class="helper-text" data-error="Required field"></span>
-                        </div>
-                        <div class="input-field col s12 m6">
-                            <input id="last-name" type="text" class="validate" required />
-                            <label for="last-name">Last name</label>
-                            <span class="helper-text" data-error="Required field"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="email" type="email" class="validate" required />
-                            <label for="email">Email address</label>
-                            <span class="helper-text" data-error="Invalid email address"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="subject" type="text" class="validate" />
-                            <label for="subject">Subject</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <form class="col s12">
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <textarea id="message" class="validate materialize-textarea" required></textarea>
-                              <label for="textarea1">Your message</label>
-                              <span class="helper-text" data-error="Required field"></span>
+            <div class="buttons-row">
+                <a class="waves-effect waves-light btn-flat btn blue darken-3 white-text modal-trigger" href="#contactme-modal">Get in touch</a>
+
+                <!-- Calendly link widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                <a id="calendly-button" href="" class="col s4 waves-effect waves-light modal-trigger btn blue darken-3 white-text" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/cvoskoglou/30min'});return false;">Book a call</a>
+                <!-- Calendly link widget end -->
+            </div>
+
+            <div class="buttons-row">
+                <a href="https://www.twitter.com/ChristinaVoskog" class="social-profile-link">
+                    <img src="imgs/X_logo_dark_small.png"/>
+                </a>
+                <a href="https://www.linkedin.com/in/christina-voskoglou/" class="social-profile-link">
+                    <img src="imgs/LI-In-small.png"/>
+                </a>
+                <!-- Modal Structure -->
+                <div id="contactme-modal" class="modal">
+                    <form onsubmit="sendEmail">
+                        <div class="modal-content">
+                            <h4>Contact me</h4>
+                            <div class="row">
+                                <div class="input-field col s12 m6">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="first-name" type="text" class="validate" required>
+                                    <label for="first-name">First name</label>
+                                    <span class="helper-text" data-error="Required field"></span>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <i class="hide-on-med-and-up material-icons prefix">account_circle</i>
+                                    <input id="last-name" type="text" class="validate" required />
+                                    <label for="last-name">Last name</label>
+                                    <span class="helper-text" data-error="Required field"></span>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="email" type="email" class="validate" required />
+                                    <label for="email">Email address</label>
+                                    <span class="helper-text" data-error="Invalid email address"></span>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">subject</i>
+                                    <input id="subject" type="text" class="validate" />
+                                    <label for="subject">Subject</label>
+                                </div>
+                                <div id="message-wrapper" class="input-field col s12">
+                                    <i class="material-icons prefix">message</i>
+                                    <textarea id="message" class="validate materialize-textarea" required></textarea>
+                                    <label for="textarea1">Your message</label>
+                                    <span class="helper-text" data-error="Required field"></span>
+                                </div>
                             </div>
-                          </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="modal-close waves-effect waves-green btn-flat">Send<i class="material-icons right">send</i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
+            
         </div>
 
-        <h4>About me</h4>
-        <p>A seasoned data strategy and market research consultant with extensive cross-industry experience. A proven thought leader in customer and developer insights research. See my full bio <a href="https://www.linkedin.com/in/christina-voskoglou/" target="_blank">here</a>.</p>
+          <h4>About me</h4>
+          <div class="section">
+          <p>A seasoned data strategy and market research consultant with extensive cross-industry experience. A proven thought leader in customer and developer insights research. See my full bio <a href="https://www.linkedin.com/in/christina-voskoglou/" target="_blank">here</a>.</p>
+        </div>
         <h4>What I can support you with</h4>
-        <div class="row">
-            <div class="col s12">
-                <div class="card">
-                  <div class="card-content">
-                    <span class="card-title">BI, data culture and data literacy</span>
-                    <p>Helping you to build a data-driven decision making culture and process, manage internal stakeholders, and identify suitable metrics for all levels of decision-making. Improving your teams' data literacy to effectively leverage data in their decision-making.</p>
-                  </div>
-                </div>
+        <div class="section">
+                  <h5>Market research design</h5>
+                  <p>Supporting you to go from a vague brief to a full market research plan, and execute it, yielding actionable insights about your audience that support you in your product, marketing, and business strategy.</p>
+          </div>
+            <div class="section">
+              <h5>Business Intelligence (BI), data culture and data literacy</h5>
+              <p>Helping you build a data-driven decision-making culture, infrastructure and process. Working alongside your teams to manage internal stakeholders, and identify suitable metrics for all levels of decision-making. Improving your teams' data literacy to effectively leverage data in their decision-making.</p>
             </div>
-            <div class="col s12 m6">
-              <div class="card">
-                <div class="card-content">
-                  <span class="card-title">Market research design</span>
-                  <p>Supporting you to go from a vague brief to a full market research plan, and execute it, yielding actionable insights.</p>
-                </div>
+            <div class="section">
+                  <h5>Data quality and health check</h5>
+                  <p>A full-diagnostics service on data collection methodology. Assessing the quality of data already collected, and designing optimal data collection methodologies to avoid fraud and bias.</p>
               </div>
+            <div class="section">
+              <h5>Data team formation, growth and training</h5>
+              <p>Helping you build new or grow existing data science/analyst teams of the right size and skills. Training data teams to find the actionable insights in the data, and researchers to tell stories with data.</p>
             </div>
-            <div class="col s12 m6">
-                <div class="card">
-                  <div class="card-content">
-                    <span class="card-title">Data productisation</span>
+            <div class="section">
+              <h5>Data productisation</h5>
                     <p>From data intelligence platforms to analytical CRM and anything in-between. How to design data products and make them work for you.</p>
-                  </div>
-                </div>
-              </div>
-            <div class="col s12 m6">
-              <div class="card">
-                <div class="card-content">
-                  <span class="card-title">Data health check</span>
-                  <p>A full-diagnostics service on data collection methodology. Assessing the quality of your data already collected, and designing optimal data collection methodologies to avoid fraud and bias.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col s12 m6">
-                <div class="card">
-                  <div class="card-content">
-                    <span class="card-title">Data team formation, growth and training</span>
-                    <p>Helping you build new or grow existing data science/analyst teams of the right size and skills. Training data teams to find the actionable insights in the data, and researchers to tell stories with data.</p>
-                  </div>
-                </div>
               </div>
           </div>
-    </div>
     
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('.modal');
         var instances = M.Modal.init(elems);
   });
+
+        var form = document.getElementsByTagName("form")[0];
+
+        function sendEmail(e) {
+            console.log("hi")
+            e.preventDefault();
+            M.toast({html: "Sending..."})
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "nickterzis.18@gmail.com",
+                Password : "C25054FBE4D12EAD7345319781BDEC55E71A",
+                To : 'harry.pottah.harry@gmail.com',
+                From : "nickterzis.18@gmail.com",
+                Subject : "Partnership",
+                Body : "Hi! I am interested in your product. Could you please provide more information? Kind regards, Nikolaos"
+            }).then(
+                M.toast({html: "Sent!"})
+            );
+        }
+
+        form.addEventListener('submit', sendEmail);
     </script>
 </body>
 </html>

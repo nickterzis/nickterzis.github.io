@@ -1,0 +1,57 @@
+#contactme-modal .modal-content {
+    padding-bottom: 0;
+}
+
+#contactme-modal .row {
+    margin-bottom: 0;
+}
+
+#contactme-modal textarea {
+    margin-bottom: 0;
+}
+
+#message-wrapper{
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 55%;
+    }
+}
+
+.section {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.social-profile-link {
+    display: flex;
+}
+
+#social-buttons a {
+    margin: 0 0.75rem;
+}
+
+#social-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-row {
+    display: contents;
+}
+
+@media only screen and (max-width: 500px){
+    #social-buttons {
+        display: block;
+    }     
+
+    .buttons-row {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+        margin-bottom: 1rem; 
+    }
+}
