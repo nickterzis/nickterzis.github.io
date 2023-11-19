@@ -72,9 +72,10 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button class="modal-close waves-effect waves-green btn-flat">Send<i class="material-icons right">send</i></button>
+                            <button class="waves-effect waves-green btn-flat">Send<i class="material-icons right">send</i></button>
                         </div>
                     </form>
+                    <i id="contact-close-btn" class="material-icons modal-close">close</i>
                 </div>
             </div>
             
@@ -114,23 +115,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.modal');
             var instances = M.Modal.init(elems);
-        });
-
-        const form = document.getElementsByTagName("form")[0]
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            M.toast({html: "Sending..."})
-            Email.send({
-                SecureToken: "5c8da76a-6f88-4b01-82f3-b82c73b46e48",
-                To : 'christina@insighttree.net',
-                From : "InsightT19@gmail.com",
-                Subject : document.getElementById("subject").value,
-                Body : `Name: ${document.getElementById("first-name").value}<br>Email address: ${document.getElementById("email").value}<br>Message:<br>${document.getElementById("message").value}`
-            }).then(
-                M.toast({html: "Sent!"})
-            );
-        })
-            
+        }); 
     </script>
+    <script src="script.js"></script>
 </body>
 </html>

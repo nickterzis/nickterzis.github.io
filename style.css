@@ -79,3 +79,9 @@ html {
         margin-bottom: 1rem; 
     }
 }
+
+#contact-close-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
