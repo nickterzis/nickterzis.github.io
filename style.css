@@ -1,3 +1,23 @@
+html {
+    background-color: rgba(68, 84, 106, 0.93);
+    font-size: medium;
+}
+
+.input-field .prefix.active {
+    color: rgb(68, 84, 106);
+}
+
+.container {
+    background-color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.input-field{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 #contactme-modal .modal-content {
     padding-bottom: 0;
 }
@@ -17,6 +37,12 @@
 @media only screen and (min-width: 993px) {
     .container {
         width: 55%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .container {
+        width: 100%;
     }
 }
 
@@ -43,7 +69,7 @@
     display: contents;
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 610px){
     #social-buttons {
         display: block;
     }     

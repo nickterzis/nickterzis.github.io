@@ -42,25 +42,30 @@
                 </a>
                 <!-- Modal Structure -->
                 <div id="contactme-modal" class="modal">
-                    <form action="mailto:christina@insighttree.net" method="GET" enctype="text/plain">
+                    <form>
                         <div class="modal-content">
                             <h4>Get in touch</h4>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input name="subject" id="first-name" type="text" class="validate" required>
+                                    <input id="first-name" type="text" class="validate" required>
                                     <label for="first-name">Name</label>
                                     <span class="helper-text" data-error="Required field"></span>
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">email</i>
-                                    <input name="email" id="email" type="email" class="validate" required />
+                                    <input id="email" type="email" class="validate" required />
                                     <label for="email">Email address</label>
                                     <span class="helper-text" data-error="Invalid email address"></span>
                                 </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">subject</i>
+                                    <input id="subject" type="text" class="validate" />
+                                    <label for="email">Subject</label>
+                                </div>
                                 <div id="message-wrapper" class="input-field col s12">
                                     <i class="material-icons prefix">message</i>
-                                    <textarea name="body" id="message" class="validate materialize-textarea" required></textarea>
+                                    <textarea id="message" class="validate materialize-textarea" required></textarea>
                                     <label for="textarea1">Your message</label>
                                     <span class="helper-text" data-error="Required field"></span>
                                 </div>
@@ -107,9 +112,27 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.modal');
-        var instances = M.Modal.init(elems);
-  });
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+
+        const form = document.getElementsByTagName("form")[0]
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            M.toast({html: "Sending..."})
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "nickterzis.18@gmail.com",
+                Password : "67F69C2E6521E0A6A978C52771BD3459D32C",
+                To : 'ngterzis@hotmail.gr',
+                From : "nickterzis.18@gmail.com",
+                Subject : document.getElementById("subject").value,
+                Body : `Name: ${document.getElementById("first-name").value}<br>Email address: ${document.getElementById("email").value}<br>Message:<br>${document.getElementById("message")}`
+            }).then(
+                M.toast({html: "Sent!"})
+            );
+        })
+            
     </script>
 </body>
 </html>
