@@ -3,10 +3,6 @@ html {
     font-size: medium;
 }
 
-.input-field .prefix.active {
-    color: rgb(68, 84, 106);
-}
-
 .container {
     background-color: white;
     padding-left: 2rem;

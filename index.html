@@ -121,13 +121,11 @@
             e.preventDefault();
             M.toast({html: "Sending..."})
             Email.send({
-                Host : "smtp.elasticemail.com",
-                Username : "nickterzis.18@gmail.com",
-                Password : "67F69C2E6521E0A6A978C52771BD3459D32C",
-                To : 'ngterzis@hotmail.gr',
-                From : "nickterzis.18@gmail.com",
+                SecureToken: "5c8da76a-6f88-4b01-82f3-b82c73b46e48",
+                To : 'christina@insighttree.net',
+                From : "InsightT19@gmail.com",
                 Subject : document.getElementById("subject").value,
-                Body : `Name: ${document.getElementById("first-name").value}<br>Email address: ${document.getElementById("email").value}<br>Message:<br>${document.getElementById("message")}`
+                Body : `Name: ${document.getElementById("first-name").value}<br>Email address: ${document.getElementById("email").value}<br>Message:<br>${document.getElementById("message").value}`
             }).then(
                 M.toast({html: "Sent!"})
             );
